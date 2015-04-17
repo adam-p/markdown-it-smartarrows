@@ -11,7 +11,7 @@ Based largely on the markdown-it typographer m-dash/n-dash replacements.
 https://github.com/markdown-it/markdown-it/blob/cc8714584282209853fd14e3e0dfb20dfd9c289b/lib/rules_core/replacements.js
 */
 
-var TYPOG_RE = /-->|<--|<-->|==>|<==|<==>/;
+var TYPOG_RE = /--|==/;
 
 function typographerPlus(state) {
   if (!state.md.options.typographer &&
