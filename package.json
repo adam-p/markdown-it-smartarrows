@@ -1,0 +1,36 @@
+{
+  "name": "markdown-it-typographer-plus",
+  "version": "1.0.0",
+  "description": "markdown-it plugin that adds more typographic enhancements (like smart arrows)",
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "typography",
+    "arrows"
+  ],
+  "homepage": "https://github.com/adam-p/markdown-it-typographer-plus",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/adam-p/markdown-it-typographer-plus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adam-p/markdown-it-typographer-plus/issues"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "devDependencies": {
+    "browserify": "*",
+    "chai": "*",
+    "coveralls": "^2.11.2",
+    "eslint": "0.10.2",
+    "eslint-plugin-nodeca": "^1.0.0",
+    "istanbul": "*",
+    "markdown-it": "^4.0.0",
+    "mocha": "*",
+    "uglify-js": "*"
+  }
+}
