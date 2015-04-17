@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/adam-p/markdown-it-typographer-plus.svg?branch=master)](https://travis-ci.org/adam-p/markdown-it-typographer-plus)
 [![NPM version](https://img.shields.io/npm/v/markdown-it-footnote.svg?style=flat)](https://www.npmjs.org/package/markdown-it-footnote)
-[![Coverage Status](https://coveralls.io/repos/adam-p/markdown-it-typographer-plus/badge.svg?branch=master)](https://coveralls.io/r/adam-p/markdown-it-typographer-plus?branch=master)
+[![Coverage Status](https://coveralls.io/repos/adam-p/markdown-it-typographer-plus/badge.svg)](https://coveralls.io/r/adam-p/markdown-it-typographer-plus)
 
 
 # markdown-it-typographer-plus
