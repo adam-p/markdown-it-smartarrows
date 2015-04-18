@@ -10,33 +10,27 @@
 
 var expect = require('chai').expect;
 
-describe('markdown-it-typographer-plus', function () {
+describe('markdown-it-smartarrows', function () {
 
   it('should operate only if enabled', function() {
     var md, s, target;
 
-    // Not enabled
+    // Enabled via `smartArrows` option default
     md = require('markdown-it')().use(require('../'));
     s = '-->';
+    target = '<p>→</p>\n';
+    expect(md.render(s)).to.equal(target);
+
+    // Enabled via `smartArrows` option
+    md = require('markdown-it')({smartArrows:true}).use(require('../'));
+    s = '-->';
+    target = '<p>→</p>\n';
+    expect(md.render(s)).to.equal(target);
+
+    // Disabled via `smartArrows` option
+    md = require('markdown-it')({smartArrows:false}).use(require('../'));
+    s = '-->';
     target = '<p>--&gt;</p>\n';
-    expect(md.render(s)).to.equal(target);
-
-    // Enabled via `typographer` option
-    md = require('markdown-it')({typographer:true}).use(require('../'));
-    s = '-->';
-    target = '<p>→</p>\n';
-    expect(md.render(s)).to.equal(target);
-
-    // Enabled via `typographerPlus` option
-    md = require('markdown-it')({typographerPlus:true}).use(require('../'));
-    s = '-->';
-    target = '<p>→</p>\n';
-    expect(md.render(s)).to.equal(target);
-
-    // Enabled via `typographer` and `typographerPlus` options
-    md = require('markdown-it')({typographer:true, typographerPlus:true}).use(require('../'));
-    s = '-->';
-    target = '<p>→</p>\n';
     expect(md.render(s)).to.equal(target);
   });
 

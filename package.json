@@ -1,7 +1,7 @@
 {
-  "name": "markdown-it-typographer-plus",
+  "name": "markdown-it-smartarrows",
   "version": "1.0.0",
-  "description": "markdown-it plugin that adds more typographic enhancements (like smart arrows)",
+  "description": "markdown-it plugin that adds \"smart arrows\" to markdown-it's typographic enhancements",
   "keywords": [
     "markdown-it-plugin",
     "markdown-it",
@@ -9,13 +9,13 @@
     "typography",
     "arrows"
   ],
-  "homepage": "https://github.com/adam-p/markdown-it-typographer-plus",
+  "homepage": "https://github.com/adam-p/markdown-it-smartarrows",
   "repository": {
     "type": "git",
-    "url": "git://github.com/adam-p/markdown-it-typographer-plus.git"
+    "url": "git://github.com/adam-p/markdown-it-smartarrows.git"
   },
   "bugs": {
-    "url": "https://github.com/adam-p/markdown-it-typographer-plus/issues"
+    "url": "https://github.com/adam-p/markdown-it-smartarrows/issues"
   },
   "license": "MIT",
   "main": "index.js",

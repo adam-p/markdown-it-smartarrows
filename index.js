@@ -11,12 +11,10 @@ Based largely on the markdown-it typographer m-dash/n-dash replacements.
 https://github.com/markdown-it/markdown-it/blob/cc8714584282209853fd14e3e0dfb20dfd9c289b/lib/rules_core/replacements.js
 */
 
-var TYPOG_RE = /--|==/;
+var ARROWS_RE = /--|==/;
 
-function typographerPlus(state) {
-  if (!state.md.options.typographer &&
-      !state.md.options.typographerPlus)
-  {
+function smartArrows(state) {
+  if (state.md.options.smartArrows === false) {
     return;
   }
 
@@ -24,10 +22,9 @@ function typographerPlus(state) {
 
     if (state.tokens[blkIdx].type !== 'inline') { continue; }
 
-    if (TYPOG_RE.test(state.tokens[blkIdx].content)) {
+    if (ARROWS_RE.test(state.tokens[blkIdx].content)) {
       doReplacementsInToken(state.tokens[blkIdx].children);
     }
-
   }
 }
 
@@ -37,7 +34,7 @@ function doReplacementsInToken(inlineTokens) {
   for (i = inlineTokens.length - 1; i >= 0; i--) {
     token = inlineTokens[i];
     if (token.type === 'text') {
-      if (TYPOG_RE.test(token.content)) {
+      if (ARROWS_RE.test(token.content)) {
         token.content = token.content
           // The order of these is important -- avoid premature match
           // <-->
@@ -63,7 +60,7 @@ function doReplacementsInToken(inlineTokens) {
   }
 }
 
-module.exports = function typographerPlus_plugin(md, scheme) {
+module.exports = function smartArrows_plugin(md, scheme) {
   // Smart arrows must come before the built-in m-dash and n-dash support
-  md.core.ruler.before('replacements', 'typographerPlus', typographerPlus);
+  md.core.ruler.before('replacements', 'smartArrows', smartArrows);
 };
