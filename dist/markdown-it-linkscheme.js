@@ -38,24 +38,12 @@ function doReplacementsInToken(inlineTokens) {
       if (ARROWS_RE.test(token.content)) {
         token.content = token.content
           // The order of these is important -- avoid premature match
-          // <-->
-          .replace(/(^|\s)<-->(\s|$)/mg, '$1\u2194$2')
-          .replace(/(^|[^<\s])<-->([^>\s]|$)/mg, '$1\u2194$2')
-          // -->
-          .replace(/(^|\s)-->(\s|$)/mg, '$1\u2192$2')
-          .replace(/(^|[^-\s])-->([^>\s]|$)/mg, '$1\u2192$2')
-          // -->
-          .replace(/(^|\s)<--(\s|$)/mg, '$1\u2190$2')
-          .replace(/(^|[^<\s])<--([^-\s]|$)/mg, '$1\u2190$2')
-          // <==>
-          .replace(/(^|\s)<==>(\s|$)/mg, '$1\u21d4$2')
-          .replace(/(^|[^<\s])<==>([^>\s]|$)/mg, '$1\u21d4$2')
-          // ==>
-          .replace(/(^|\s)==>(\s|$)/mg, '$1\u21d2$2')
-          .replace(/(^|[^=\s])==>([^>\s]|$)/mg, '$1\u21d2$2')
-          // -->
-          .replace(/(^|\s)<==(\s|$)/mg, '$1\u21d0$2')
-          .replace(/(^|[^<\s])<==([^=\s]|$)/mg, '$1\u21d0$2');
+          .replace(/(^|[^<])<-->([^>]|$)/mg, '$1\u2194$2')
+          .replace(/(^|[^-])-->([^>]|$)/mg, '$1\u2192$2')
+          .replace(/(^|[^<])<--([^-]|$)/mg, '$1\u2190$2')
+          .replace(/(^|[^<])<==>([^>]|$)/mg, '$1\u21d4$2')
+          .replace(/(^|[^=])==>([^>]|$)/mg, '$1\u21d2$2')
+          .replace(/(^|[^<])<==([^=]|$)/mg, '$1\u21d0$2');
       }
     }
   }

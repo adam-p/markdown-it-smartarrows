@@ -15,6 +15,8 @@ CURR_HEAD   := $(firstword $(shell git show-ref --hash HEAD | cut -b -6) master)
 GITHUB_PROJ := https://github.com//adam-p/${NPM_PACKAGE}
 
 
+all: test browserify
+
 lint:
 	./node_modules/.bin/eslint --reset .
 

@@ -43,8 +43,19 @@ describe('markdown-it-smartarrows', function () {
     expect(md.render(s)).to.equal(target);
 
     // And should not break headers or m-dashes
-    s = 'Arrows\n==\nAnd friends\n--\n--> <-- <--> ==> <== <==> --- m-dash -- n-dash';
-    target = '<h1>Arrows</h1>\n<h2>And friends</h2>\n<p>→ ← ↔ ⇒ ⇐ ⇔ — m-dash – n-dash</p>\n';
+    s = 'Arrows\n==\nAnd friends\n--\n--> <-- <-->\n\n==> <== <==> --- m-dash -- n-dash';
+    target = '<h1>Arrows</h1>\n<h2>And friends</h2>\n<p>→ ← ↔</p>\n<p>⇒ ⇐ ⇔ — m-dash – n-dash</p>\n';
+    expect(md.render(s)).to.equal(target);
+  });
+
+  it('should properly cope with unicode spaces', function() {
+    var s, target;
+    var md = require('markdown-it')().use(require('../'));
+
+    // \u3000 is a unicode space character that doesn't match \s in older browsers.
+    // http://www.fileformat.info/info/unicode/category/Zs/list.htm
+    s = 'a ==>\u3000b';
+    target = '<p>a ⇒\u3000b</p>\n';
     expect(md.render(s)).to.equal(target);
   });
 });
