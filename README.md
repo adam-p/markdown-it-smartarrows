@@ -16,14 +16,9 @@ This is a [markdown-it](https://github.com/markdown-it/markdown-it) plugin that 
 <==> ⇔
 ```
 
-Can be disabled by setting the `smartArrows` option to `false`.
-
 ```
 var mdSmartArrows = require('markdown-it-smartarrows');
-var md = require('markdown-it')({
-  smartArrows: true  // default is true, set to false to disable
-});
-md.use(mdSmartArrows);
+var md = require('markdown-it')().use(mdSmartArrows);
 ```
 
 Note that using this plugin will interfere with using HTML comments in your Markdown. 

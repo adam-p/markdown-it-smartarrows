@@ -14,10 +14,6 @@ https://github.com/markdown-it/markdown-it/blob/cc8714584282209853fd14e3e0dfb20d
 var ARROWS_RE = /--|==/;
 
 function smartArrows(state) {
-  if (state.md.options.smartArrows === false) {
-    return;
-  }
-
   for (var blkIdx = state.tokens.length - 1; blkIdx >= 0; blkIdx--) {
 
     if (state.tokens[blkIdx].type !== 'inline') { continue; }
