@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/adam-p/markdown-it-smartarrows.svg?branch=master)](https://travis-ci.org/adam-p/markdown-it-smartarrows)
-[![NPM version](https://img.shields.io/npm/v/markdown-it-footnote.svg?style=flat)](https://www.npmjs.org/package/markdown-it-footnote)
+[![NPM version](https://img.shields.io/npm/v/markdown-it-smartarrows.svg?style=flat)](https://www.npmjs.org/package/markdown-it-smartarrows)
 [![Coverage Status](https://coveralls.io/repos/adam-p/markdown-it-smartarrows/badge.svg)](https://coveralls.io/r/adam-p/markdown-it-smartarrows)
 
 
